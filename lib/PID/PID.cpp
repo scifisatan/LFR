@@ -20,7 +20,7 @@ int PID::calcPID(int error)
     _error = error;
     _P = _error;
     _I = _I + _error;
-    _D = _error - _previousError;
+    _D =  _previousError - _error;
     _PIDValue = (_P * _kp) + (_I * _ki) + (_D * _kd);
     _previousError = _error;
     return _PIDValue;
